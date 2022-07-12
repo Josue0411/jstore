@@ -1,0 +1,13 @@
+<% if @article.present? %>
+<br>
+<h2><%= @article.title %></h2>
+<br>
+<img src="<%= @article.image %>" alt="<%= @article.title %>">
+<p>USD: <%= @article.price %>$</p>
+<p><%= @article.description%></p>
+
+
+<% else %>
+    <br>
+    <h2><%= @msg %></h2>
+<% end %>
