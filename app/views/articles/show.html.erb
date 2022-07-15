@@ -1,13 +1,41 @@
 <% if @article.present? %>
-<br>
-<h2><%= @article.title %></h2>
-<br>
-<img src="<%= @article.image %>" alt="<%= @article.title %>">
-<p>USD: <%= @article.price %>$</p>
-<p><%= @article.description%></p>
+  <main>
+    <div class="bg-black mb-5">
+      <h1 class="text-center text-white">JStore</h1>
+    </div>
 
+    <%= link_to "Atrás", :back, class: "btn btn-outline-secondary mt-3 ms-3"%>
 
+    <section class="container mt-4">
+      <div class="row">
+        <article id="FotoYBotones" class="col-sm-6">
+          <div>
+            <img class="rounded mx-auto d-block" 
+              src="<%= @article.image %>" 
+              alt="<%= @article.title %>" 
+              width=400>
+          </div>
+          <div class="mt-3 d-flex justify-content-center">
+            <button class="btn btn-outline-dark me-3">Agregar al carrito</button>
+            <button class="btn btn-outline-dark">Añadir a favoritos</button>
+          </div>
+        </article>
+        <article id="Descripción" class="col-sm-6">
+          <h2 class="mt-4"><%= @article.title %></h2>
+          <b class="mt-5">USD: <%= @article.price %>$</b>
+          <p class="mt-4"><%= @article.description%></p>
+            <a class="btn btn-outline-success" 
+              target="_blank"
+              href="https://wa.me/584127722306?text=
+              <%=URI.encode_www_form_component("Hola Estoy interesade en #{@article.title} "\
+              "como es el procesa para la compra?")%>">
+            WhatsApp
+            </a>
+        </article>
+      </div>
+    </section>
+  </main>
 <% else %>
     <br>
     <h2><%= @msg %></h2>
-<% end %>
+<% end %>  
