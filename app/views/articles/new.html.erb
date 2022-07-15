@@ -1,36 +1,6 @@
 <main class="">
-  <div class="bg-black bg-gradient mb-4">
-    <h1 class="text-center text-white">JStore</h1>
-  </div> 
+  <%= render "nav" %>
 
-  <h1 class="text-center mb-4">Agregar Artículos</h1>
-  <div class="d-flex justify-content-center">
-    <%= form_with model: @article do |form| %>
-      <div class="mb-2">
-        <%= form.label :title, class: "form-label" %><br>
-        <%= form.text_field :title, class: "form-control border border-dark" %>
-      </div>
-
-      <div class="mb-2">
-        <%= form.label :description, class: "form-label"%><br>
-        <%= form.text_area :description, class: "form-control border border-dark" %>
-      </div>
-
-      <div class="mb-2">
-        <%= form.label :price, class: "form.label" %><br>
-        <%= form.number_field :price, class: "form-control border border-dark" %>
-      </div>
-
-      <div class="mb-2">
-        <%= form.label :image, class: "form-label" %><br>
-        <%= form.text_area :image, class: "form-control border border-dark" %>
-      </div>
-
-      <div class="d-flex justify-content-center">
-        <%= form.submit"Crear Artículo", class: "btn btn-outline-dark btn-sm mt-2"%>
-      </div>
-
-    <% end %>
-  </div>
+  <h1 class="text-center mb-5">Agregar Artículos</h1>
+  <%= render "form", article: @article, btn_name: "Agregar Artículo"%>
 </main>
-
